@@ -5,23 +5,24 @@ API Perolehan Suara Pilpres 2019 dari Website KPU
 #### JSON Output
 
     {
-		"suara": {
-			"01": {
+		"suara": [
+			{
 				"nama": "Ir. H. JOKO WIDODO - Prof. Dr. (H.C) KH. MA'RUF AMIN",
-				"perolehan": "55.18681165926%"
+				"perolehan": "55.1%"
 			},
-			"02": {
+			{
 				"nama": "H. PRABOWO SUBIANTO - H. SANDIAGA SALAHUDIN UNO",
-				"perolehan": "44.81318834074%"
+				"perolehan": "44.9%"
 			}
-		    },
-		    "progress": [
-			    "17310/813350"
-		    ]
-    }
+		],
+		"progress": {
+			"angka": "159203/813350",
+			"presentase": "19.57%"
+		}
+	}
 
 #### Demo
-[https://mukhlis.id/test-kpu/suara.php](https://mukhlis.id/test-kpu/suara.php)
+[https://api.mukhlis.id/kpu-pemilu-api/suara.php](https://api.mukhlis.id/kpu-pemilu-api/suara.php)
 
 #### Library 
 PHP Curl Class: HTTP requests made easy
