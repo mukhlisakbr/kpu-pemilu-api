@@ -16,29 +16,40 @@ function hitung_suara($out,$data){
     $satu = $data['chart']['21'];
     $dua = $data['chart']['22'];
     if ($out === 'satu') {
-        return ($satu/($satu+$dua))*100;
+        return round(($satu/($satu+$dua))*100, 2);
     } else {
-        return ($dua/($satu+$dua))*100;
+        return round(($dua/($satu+$dua))*100, 2);
     }
 }
 
-$suara_01 = hitung_suara('satu',$result)."%";
-$suara_02 = hitung_suara('dua',$result)."%";
-$progress_tps = $result['progress']['proses']."/".$result['progress']['total'];
+function progress_angka($data){
+    return $data['progress']['proses']."/".$data['progress']['total'];
+}
+
+function progress_persen($data){
+    $hasil = ($data['progress']['proses'] / $data['progress']['total'])*100;
+    return round($hasil, 2);
+}
+
+$suara_01 = hitung_suara('satu',$result).'%';
+$suara_02 = hitung_suara('dua',$result).'%';
+$progress_angka = progress_angka($result);
+$progress_persen = progress_persen($result).'%';
 
 $data = array(
     'suara' => array(
-        '01' => array(
+        array(
             'nama' => "Ir. H. JOKO WIDODO - Prof. Dr. (H.C) KH. MA'RUF AMIN",
             'perolehan' => $suara_01
         ),
-        '02' => array(
+        array(
             'nama' => "H. PRABOWO SUBIANTO - H. SANDIAGA SALAHUDIN UNO",
             'perolehan' => $suara_02
         )
     ),
     'progress' => array(
-        $progress_tps
+        'angka' => $progress_angka,
+        'persen' => $progress_persen
     )
 );
 
