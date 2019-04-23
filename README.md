@@ -2,7 +2,7 @@
 # kpu-pemilu-api
 API Perolehan Suara Pilpres 2019 dari Website KPU
 
-#### Json Output
+#### JSON Output
 
     {
 		"suara": {
